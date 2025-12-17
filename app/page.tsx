@@ -1,65 +1,130 @@
+// ===============================
+// ANDRE-STYLE MINIMAL PORTFOLIO UI
+// For MERN / Next.js Developer (Marish)
+// Style: Clean, editorial, whitespace-heavy
+// Tech: Next.js App Router + TailwindCSS
+// ===============================
+
+// ===============================
+// FILE: app/page.tsx
+// ===============================
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="bg-white text-gray-900">
+      {/* HEADER */}
+      <header className="max-w-6xl mx-auto px-6 py-10 flex justify-between items-center">
+        <h1 className="text-xl font-semibold">Marish</h1>
+        <nav className="flex gap-6 text-sm text-gray-600">
+          <a href="#about" className="hover:text-black">About</a>
+          <a href="#work" className="hover:text-black">Work</a>
+          <a href="#contact" className="hover:text-black">Contact</a>
+        </nav>
+      </header>
+
+      {/* HERO */}
+      <section className="max-w-6xl mx-auto px-6 pt-20 pb-32">
+        <h2 className="text-5xl md:text-6xl font-light leading-tight max-w-4xl">
+          I’m a <span className="font-medium">MERN Stack Developer</span> who builds
+          <br /> clean, scalable web applications
+          <br /> and business‑focused SaaS products.
+        </h2>
+
+        <p className="mt-8 text-gray-600 max-w-2xl">
+          Specialized in Next.js, Node.js, and MongoDB. I focus on clarity, performance,
+          and real‑world problem solving through code.
+        </p>
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="max-w-6xl mx-auto px-6 py-24 border-t">
+        <div className="grid md:grid-cols-2 gap-12">
+          <div>
+            <h3 className="text-2xl font-medium mb-4">About</h3>
+            <p className="text-gray-700 leading-relaxed">
+              I’m a developer with a product mindset. I enjoy building systems that
+              help teams work better — from authentication systems and dashboards
+              to full SaaS platforms like JD‑ZUM.
+            </p>
+            <p className="mt-4 text-gray-700 leading-relaxed">
+              I care deeply about clean architecture, maintainability, and
+              thoughtful user experience.
+            </p>
+          </div>
+          <div className="text-sm text-gray-600">
+            <p><strong>Stack</strong></p>
+            <p className="mt-2">Next.js · React · Node.js · MongoDB</p>
+            <p className="mt-4"><strong>Tools</strong></p>
+            <p className="mt-2">TypeScript · Tailwind · Git · Vercel</p>
+            <p className="mt-4"><strong>Focus</strong></p>
+            <p className="mt-2">SaaS · Dashboards · APIs · Auth Systems</p>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* WORK */}
+      <section id="work" className="max-w-6xl mx-auto px-6 py-24 border-t">
+        <h3 className="text-2xl font-medium mb-12">Selected Work</h3>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          <article className="border rounded-lg p-6 hover:shadow-md transition">
+            <h4 className="font-medium">JD‑ZUM</h4>
+            <p className="text-sm text-gray-600 mt-2">
+              Business management SaaS for teams.
+            </p>
+            <p className="text-xs text-gray-500 mt-3">
+              Next.js · Node · TypeScript · MongoDB
+            </p>
+          </article>
+
+          <article className="border rounded-lg p-6 hover:shadow-md transition">
+            <h4 className="font-medium">E‑commerce Platform</h4>
+            <p className="text-sm text-gray-600 mt-2">
+              Full‑stack MERN store with payments.
+            </p>
+            <p className="text-xs text-gray-500 mt-3">
+              React · Node · Stripe
+            </p>
+          </article>
+
+          <article className="border rounded-lg p-6 hover:shadow-md transition">
+            <h4 className="font-medium">Realtime Chat App</h4>
+            <p className="text-sm text-gray-600 mt-2">
+              Scalable realtime messaging system.
+            </p>
+            <p className="text-xs text-gray-500 mt-3">
+              Socket.io · Express
+            </p>
+          </article>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="max-w-6xl mx-auto px-6 py-32 border-t">
+        <h3 className="text-2xl font-medium">Let’s work together</h3>
+        <p className="mt-4 text-gray-600 max-w-xl">
+          If you’re looking for a developer to build or improve a product,
+          feel free to reach out.
+        </p>
+
+        <div className="mt-6 text-sm">
+          <p>Email: <span className="text-gray-800">rishzberri@gmail.com</span></p>
+          <p className="mt-2">GitHub · LinkedIn</p>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="py-10 text-center text-xs text-gray-400">
+        © {new Date().getFullYear()} Marish
+      </footer>
+    </main>
   );
 }
+
+// ===============================
+// NOTES
+// - Add Tailwind to globals.css
+// - Replace text with real details
+// - Optional: add Framer Motion fade‑ins
+// ===============================
