@@ -43,11 +43,9 @@ export default function Home() {
 
         {/* HERO */}
         <section className="max-w-6xl mx-auto px-6 pt-20 pb-32">
-          <h2 className="text-5xl md:text-6xl font-light leading-tight max-w-4xl">
-            I’m a <span className="font-medium">MERN Stack Developer</span> who
-            builds
-            <br /> clean, scalable web applications
-            <br /> and business‑focused SaaS products.
+          <h2 className="text-5xl md:text-6xl font-light leading-tight max-w-5xl">
+            I’m a <span className="font-medium">MERN Stack Developer</span>
+            <br /> who builds clean, scalable web applications and products.
           </h2>
 
           <p className="mt-8 text-gray-600 max-w-2xl">
@@ -57,7 +55,10 @@ export default function Home() {
         </section>
 
         {/* ABOUT */}
-        <section id="about" className="max-w-6xl mx-auto px-6 py-24 border-t">
+        <section
+          id="about"
+          className="max-w-6xl mx-auto px-6 py-24 border-t border-black/12"
+        >
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-2xl font-medium mb-4">About</h3>
@@ -89,7 +90,10 @@ export default function Home() {
         </section>
 
         {/* WORK */}
-        <section id="work" className="max-w-6xl mx-auto px-6 py-24 border-t">
+        <section
+          id="work"
+          className="max-w-6xl mx-auto px-6 py-24 border-t border-black/12"
+        >
           <h3 className="text-2xl font-medium mb-12">Selected Work</h3>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -124,7 +128,10 @@ export default function Home() {
         </section>
 
         {/* CONTACT */}
-        <section id="contact" className="max-w-6xl mx-auto px-6 py-32 border-t">
+        <section
+          id="contact"
+          className="max-w-6xl mx-auto px-6 py-32 border-t border-black/12"
+        >
           <h3 className="text-2xl font-medium">Let’s work together</h3>
           <p className="mt-4 text-gray-600 max-w-xl">
             If you’re looking for a developer to build or improve a product,
@@ -135,7 +142,27 @@ export default function Home() {
             <p>
               Email: <span className="text-gray-800">rishzberri@gmail.com</span>
             </p>
-            <p className="mt-2">GitHub · LinkedIn</p>
+            {/* <p className="mt-2">GitHub · LinkedIn</p> */}
+            <p className="mt-2">
+              {" "}
+              <a
+                href="https://github.com/arish-web"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                GitHub
+              </a>
+              <span className="px-1">·</span>
+              <a
+                href="https://www.linkedin.com/in/mariswarakannana"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                LinkedIn
+              </a>
+            </p>
           </div>
         </section>
 
