@@ -136,7 +136,7 @@ export default function DevStickerBackground() {
             max-md:static
             max-md:block
             max-md:mx-auto
-            max-md:my-12
+            max-md:my-9
             "
           style={{
             left: s.x,
