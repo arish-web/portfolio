@@ -102,7 +102,7 @@ export default function DevStickerBackground() {
             absolute
             w-24 sm:w-28 md:w-36
             opacity-12
-            grayscale-25
+            grayscale-2
             pointer-events-none
 
             /* mobile: stack naturally */
