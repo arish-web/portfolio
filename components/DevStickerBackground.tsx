@@ -77,11 +77,38 @@ const stickers = [
 
 export default function DevStickerBackground() {
   const [scroll, setScroll] = useState(0);
+  // 🆕 NEW: rotation state
+  const [rotation, setRotation] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile(); // run once
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScroll(window.scrollY);
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+
+    // 🆕 NEW: continuous rotation animation
+    let raf: number;
+    const animate = () => {
+      setRotation((r) => (r - 0.4) % 360); // anti-clockwise
+      raf = requestAnimationFrame(animate);
+    };
+    raf = requestAnimationFrame(animate);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(raf);
+    };
+
   }, []);
 
   return (
@@ -102,22 +129,28 @@ export default function DevStickerBackground() {
             absolute
             w-24 sm:w-28 md:w-36
             opacity-12
-            grayscale-2
+            grayscale
             pointer-events-none
 
             /* mobile: stack naturally */
             max-md:static
             max-md:block
             max-md:mx-auto
-            max-md:my-9
+            max-md:my-12
             "
           style={{
             left: s.x,
             top: s.y,
             transform: `
-        translateY(${scroll * 0.08}px)
-        rotate(${s.r}deg)
-      `,
+    translateY(${scroll * 0.08}px)
+    rotate(${
+      isMobile
+        ? "0deg" // 📱 mobile → no rotation
+        : s.src.includes("MongoDB")
+        ? "0deg" // 🧊 MongoDB always static
+        : `${rotation + i * 40}deg`
+    })
+  `,
           }}
         />
       ))}
