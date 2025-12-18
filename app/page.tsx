@@ -48,7 +48,7 @@ export default function Home() {
         {/* HERO */}
         <section className="max-w-6xl mx-auto px-6 pt-20 pb-32">
           <h2 className="text-5xl md:text-6xl font-light leading-tight max-w-5xl">
-            I’m a <span className="font-medium">MERN Stack Developer</span>
+            I’m a <span className="font-bold">MERN Stack Developer</span>
             <br /> who builds clean, scalable web applications and products.
           </h2>
 
