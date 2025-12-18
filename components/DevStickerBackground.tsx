@@ -101,7 +101,7 @@ export default function DevStickerBackground() {
           className="
             absolute
             w-24 sm:w-28 md:w-36
-            opacity-18
+            opacity-12
             grayscale-25
             pointer-events-none
 
