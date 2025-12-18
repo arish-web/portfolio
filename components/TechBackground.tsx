@@ -1,46 +1,51 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 export default function TechBackground() {
+  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMove = (e: MouseEvent) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 12;
+      const y = (e.clientY / window.innerHeight - 0.5) * 12;
+      setMouse({ x, y });
+    };
+
+    window.addEventListener("mousemove", handleMove);
+    return () => window.removeEventListener("mousemove", handleMove);
+  }, []);
+
   return (
-    <div className="fixed inset-0 pointer-events-none z-0">
-
-      {/* React */}
-      <img
-        src="https://cdn.prod.website-files.com/684243f1563d71aee92b4762/684243f1563d71aee92b4806_green-sticky-note.avif"
-        className="absolute top-14 left-38 w-48 opacity-10 grayscale"
-        alt="React"
+    <div
+      className="fixed inset-0 -z-10  from-indigo-100 via-white to-pink-100 pointer-events-none"
+      style={{ perspective: "75rem", transformStyle: "preserve-3d" }}
+    >
+      <div
+        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-purple-300/40 blur-3xl"
+        style={{
+          transform: `translateZ(-12rem) rotateX(${
+            mouse.y
+          }deg) rotateY(${-mouse.x}deg)`,
+        }}
       />
-      <img
-        src="https://cdn.prod.website-files.com/684243f1563d71aee92b4762/684243f1563d71aee92b480e_scribble.avif"
-        className="absolute top-80 left-38 w-48 opacity-10 grayscale"
-        alt="React"
+
+      <div
+        className="absolute top-1/2 right-1/4 w-80 h-80 rounded-full bg-blue-300/40 blur-3xl"
+        style={{
+          transform: `translateZ(-8rem) rotateX(${mouse.y * 0.8}deg) rotateY(${
+            -mouse.x * 0.8
+          }deg)`,
+        }}
       />
-      {/* <img
-        src="https://cdn.prod.website-files.com/684243f1563d71aee92b4762/684243f1563d71aee92b48b4_cd.avif"
-        className="absolute top-80 left-38 w-48 opacity-10 grayscale"
-        alt="React"
-      /> */}
-      {/* <img
-        src="https://cdn.prod.website-files.com/684243f1563d71aee92b4762/684243f1563d71aee92b4896_Partner-Pin_mockup-1%201.avif"
-        className="absolute top-8 left-68 w-10 opacity-100 bluescale"
-        alt="React"
-      /> */}
 
-      {/* Next.js (IMPORTANT FIX) */}
-      {/* <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-        className="absolute top-1/3 right-24 w-44 opacity-10 invert"
-        alt="Next.js"
-      /> */}
-
-      {/* Node.js */}
-      {/* <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-        className="absolute bottom-24 left-1/3 w-48 opacity-10 grayscale"
-        alt="Node.js"
-      /> */}
-      <img
-        src="https://cdn.prod.website-files.com/684243f1563d71aee92b4762/684243f1563d71aee92b480a_cat-patch.avif"
-        className="absolute bottom-74 right-50 w-48 opacity-10 grayscale"
-        alt="Cat.js"
+      <div
+        className="absolute bottom-24 left-1/2 w-64 h-64 rounded-full bg-pink-300/40 blur-2xl"
+        style={{
+          transform: `translateZ(-4rem) rotateX(${mouse.y * 0.6}deg) rotateY(${
+            -mouse.x * 0.6
+          }deg)`,
+        }}
       />
     </div>
   );

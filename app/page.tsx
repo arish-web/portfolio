@@ -9,15 +9,15 @@
 // FILE: app/page.tsx
 // ===============================
 // import Image from "next/image";
-// import TechBackground from "@/components/TechBackground";
+import TechBackground from "@/components/TechBackground";
 // import RetroBackground from "@/components/RetroBackground";
 
 export default function Home() {
   return (
     <>
-      {/* <TechBackground /> */}
+      <TechBackground />
       {/* <RetroBackground /> */}
-      <main className="bg-white text-gray-900">
+      <main className="relative z-10 bg-transparent">
         {/* HEADER */}
         <header className="max-w-6xl mx-auto px-6 py-10 flex justify-between items-center">
           <h1 className="text-xl font-semibold flex justify-between items-center">
