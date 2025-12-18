@@ -9,13 +9,17 @@
 // FILE: app/page.tsx
 // ===============================
 // import Image from "next/image";
-import TechBackground from "@/components/TechBackground";
+// import TechBackground from "@/components/TechBackground";
+// import DevBackground from "@/components/DevBackground";
+import DevStickerBackground from "@/components/DevStickerBackground";
 // import RetroBackground from "@/components/RetroBackground";
 
 export default function Home() {
   return (
     <>
-      <TechBackground />
+      {/* <TechBackground /> */}
+      {/* <DevBackground /> */}
+      <DevStickerBackground />
       {/* <RetroBackground /> */}
       <main className="relative z-10 bg-transparent">
         {/* HEADER */}
@@ -142,7 +146,6 @@ export default function Home() {
             <p>
               Email: <span className="text-gray-800">rishzberri@gmail.com</span>
             </p>
-            {/* <p className="mt-2">GitHub · LinkedIn</p> */}
             <p className="mt-2">
               {" "}
               <a

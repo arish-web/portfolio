@@ -25,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="relative min-h-screen overflow-x-hidden bg-transparent">
+      {/* <body className="overflow-x-hidden"> */}
         {children}
       </body>
     </html>
